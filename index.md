@@ -1,4 +1,4 @@
-# Verghost - A helpful hacker.
+# verghost - A helpful hacker.
 
 ## Not much here right now
 But for now, take a look at some of my projects:
