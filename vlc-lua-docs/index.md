@@ -1,5 +1,6 @@
 # VLC Lua Docs
-These are docs for VLC extenstions and interfaces. It contains info on how to create custom Lua scripts to extend VLC functionality.
+These are docs intended to help with creating custom Lua scripts to extend VLC functionality.
+
 #### **Disclaimers**
 1. I might refer to "lists", "arrays" or "objects" a lot in these docs, but that is by habbit. In lua these are all just [tables](https://www.lua.org/pil/11.html). Bascially, this is NOT in any way a Lua tutorial.
 2. All info in these docs is sourced from [This README file](http://www.videolan.org/developers/vlc/share/lua/README.txt), [VideoLAN Forums](https://forum.videolan.org/), [the Wiki](https://wiki.videolan.org/), [code from existing VLC addons](https://addons.videolan.org) and of course my own tinkering and looking at the source code.
@@ -52,3 +53,10 @@ Name | Symbol | Description | Availability
 [Volume](https://verghost.com/vlc-lua-docs/volume)  | `volume` | Modify volume | Unknown
 [Windows](https://verghost.com/vlc-lua-docs/win)  | `win` | Access to Windows console | Windows builds only
 [XML](https://verghost.com/vlc-lua-docs/xml)  | `xml` | [XML](https://en.wikipedia.org/wiki/XML) reader | Unknown
+
+## Events
+While a custom script is running, a number of different functions (which may or may not be defined in the custom script) are called by VLC. For those familiar with JavaScript in web browsers, these function calls can be thought of like [DOM events](https://developer.mozilla.org/en-US/docs/Web/Events).
+Like modules, events differ by the type of script.
+
+## Luac
+TODO
