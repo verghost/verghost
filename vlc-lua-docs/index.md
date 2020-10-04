@@ -22,15 +22,17 @@ There are a few different types of lua scripts, each with their own purpose, fun
 - Services Discovery (/lua/sd)
 
 ## The Global VLC Object
-This object is accessible through Lua scripts as `vlc` and contains several [modules](https://verghost.com/vlc-lua-docs/modules) that provide functionality and access to VLC data. Different modules are available in different types of Lua scripts.
+This object is accessible through Lua scripts as `vlc` and contains several "modules" that are accessed via their own symbols (ex. `vlc.config`). Some modules just contain a constructor or instance method for an object type, while others contain useful functions or data fields. These modules provide access to VLC data and functinoality as well as some helpful utilities.
+Different modules are available in different types of Lua scripts.
+
 ## Modules (Alphabetical order)
 Name | Symbol | Description | Availability
 ---- | ------ | ----------- | ------------
 [Config](https://verghost.com/vlc-lua-docs/config) | `config` | Access and modify VLC configuration options | All types
-[Dialog](https://verghost.com/vlc-lua-docs/dialog) | `dialog` | Interface to the [DialogUI](https://verghost.com/vlc-lua-docs/dialogui) constructor | Unknown
+[Dialog](https://verghost.com/vlc-lua-docs/dialog) | `dialog` | Interface to the DialogUI object | Unknown
 [Equalizer](https://verghost.com/vlc-lua-docs/equalizer) | `equalizer` | Access and modify equalizer settings and presets | Not in extension / Unkown
 [i18n and l10n](https://verghost.com/vlc-lua-docs/iandl) | `gettext` | Alias for libvlc [gettext](https://en.wikipedia.org/wiki/Gettext) (_ function) | All types
-[Error Codes](https://verghost.com/vlc-lua-docs/errno) | `errno` | Error values | Unknown
+[Errno](https://verghost.com/vlc-lua-docs/errno) | `errno` | Error values | Unknown
 [HTTPd](https://verghost.com/vlc-lua-docs/httpd)  | `httpd` | Interface to the VLC HTTP Daemon constructor | Interface
 [Input/Output](https://verghost.com/vlc-lua-docs/io)  | `io` | Input/Output (i.e. file read/write, directories, etc...) | Unknown
 [Messages](https://verghost.com/vlc-lua-docs/msg)  | `msg` | Output to the Messages console (Tools->Messages) | Unknown
@@ -49,8 +51,4 @@ Name | Symbol | Description | Availability
 [VLM](https://verghost.com/vlc-lua-docs/vlm)  | `vlm` | VideoLAN Manager object instance method | Unknown
 [Volume](https://verghost.com/vlc-lua-docs/volume)  | `volume` | Modify volume | Unknown
 [Windows](https://verghost.com/vlc-lua-docs/win)  | `win` | Access to Windows console | Windows builds only
-[XML](https://verghost.com/vlc-lua-docs/xml)  | `xml` | [XML](https://en.wikipedia.org/wiki/XML) | Unknown
-
-
-
-
+[XML](https://verghost.com/vlc-lua-docs/xml)  | `xml` | [XML](https://en.wikipedia.org/wiki/XML) reader | Unknown
