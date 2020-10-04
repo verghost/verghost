@@ -29,13 +29,13 @@ local dataDir = vlc.config.datadir()
 None
 
 # datadir_list()
-Get the list of possible data directories in order of priority, appended by "name".
+Get the list of possible data directories in order of priority, appended by `name`.
 ### Syntax
 ```lua
-local dirList = vlc.config.datadir_list()
+local dirList = vlc.config.datadir_list(name)
 ```
 ### Parameters
-None
+`name`
 
 # userdatadir()
 Get the current user's VLC data directory.
