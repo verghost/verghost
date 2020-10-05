@@ -1,8 +1,7 @@
 ---
 layout: default
+title: Verghost
 ---
-
-# Verghost
 
 ### In progress
 * [Plobf](https://github.com/verghost/plobf)
