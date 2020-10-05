@@ -1,7 +1,1 @@
-nav:
-  - title: Blog
-    url: /archive
 
-  - title: About
-    url: /about
-theme: jekyll-theme-minimal
