@@ -1,4 +1,9 @@
 # Configuration Module
+
+Module to get and set configuration options. 
+
+Option names can be found in the `vlcrc` file in the folder given by `vlc.config.configdir()` (usually %appdata%\vlc\ on windows).
+
 ----
 # get()
 Get the value of a VLC configuration option.
