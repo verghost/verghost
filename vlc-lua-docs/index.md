@@ -29,7 +29,7 @@ Different modules are available in different types of Lua scripts.
 ## Modules (Alphabetical order)
 
 | Name | Symbol(s) | Description | Availability |
-|:---- |:------ |:----------- |:------------ |
+| ---- | --------- | ----------- | ------------ |
 | [Config](https://verghost.com/vlc-lua-docs/config) | `config` | Access and modify VLC configuration options | All types |
 | [Dialog](https://verghost.com/vlc-lua-docs/dialog) | `dialog` | Interface to the DialogUI object | Unknown
 | [Equalizer](https://verghost.com/vlc-lua-docs/equalizer) | `equalizer` | Access and modify equalizer settings and presets | Not in extension / Unkown |
