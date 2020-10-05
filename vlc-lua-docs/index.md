@@ -33,7 +33,7 @@ Different modules are available in different types of Lua scripts.
 | [Config](https://verghost.com/vlc-lua-docs/config) | `config` | Access and modify VLC configuration options | All types |
 | [Dialog](https://verghost.com/vlc-lua-docs/dialog) | `dialog` | Interface to the DialogUI object | Unknown
 | [Equalizer](https://verghost.com/vlc-lua-docs/equalizer) | `equalizer` | Access and modify equalizer settings and presets | Not in extension / Unkown |
-| [i18n and l10n](https://verghost.com/vlc-lua-docs/iandl) | `gettext` | Alias for libvlc [gettext](https://en.wikipedia.org/wiki/Gettext) (_ function) | All types |
+| [i18n and l10n](https://verghost.com/vlc-lua-docs/iandl) | `gettext` | Alias for libvlc [gettext](https://en.wikipedia.org/wiki/Gettext) | All types |
 | [Errno](https://verghost.com/vlc-lua-docs/errno) | `errno` | Error values | Unknown |
 | [HTTPd](https://verghost.com/vlc-lua-docs/httpd)  | `httpd` | Interface to the VLC HTTP Daemon constructor | Interface |
 | [Input/Output](https://verghost.com/vlc-lua-docs/io)  | `io` | Input/Output (i.e. file read/write, directories, etc...) | Unknown |
