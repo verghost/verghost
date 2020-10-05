@@ -27,6 +27,7 @@ This object is accessible through Lua scripts as `vlc` and contains several "mod
 Different modules are available in different types of Lua scripts.
 
 ## Modules (Alphabetical order)
+
 | Name | Symbol(s) | Description | Availability |
 |:---- |:------ |:----------- |:------------ |
 | [Config](https://verghost.com/vlc-lua-docs/config) | `config` | Access and modify VLC configuration options | All types |
