@@ -26,7 +26,7 @@ There are a few different types of lua scripts, each with their own purpose, fun
 This table is accessible through Lua scripts as `vlc` and contains several useful vaues, functions and tables that provide access to VLC data and functinoality as well as some helpful utilities.
 
 ## Libraries
-Libraries are accessed through the `vlc` table and are defined in the VLC source code in the [libs.h](https://code.videolan.org/videolan/vlc/-/blob/master/modules/lua/libs.h) header file. Different libraries are available in different types of Lua scripts.
+Libraries are accessed through the `vlc` table and are defined in the VLC source code in the [libs folder](https://code.videolan.org/videolan/vlc/-/blob/master/modules/lua/libs) of the Lua module. Different libraries are available in different types of Lua scripts.
 
 | Name | Symbol(s) | Description | Availability |
 | ---- | --------- | ----------- | ------------ |
