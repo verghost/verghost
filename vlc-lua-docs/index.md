@@ -18,30 +18,30 @@ Lua scripts are installed in the /Lua folder of the VLC install directory under 
 There are a few different types of lua scripts, each with their own purpose, functionality and install directory
 - Interfaces (/lua/intf)
 - Extensions  (/lua/extensions)
-- Art fetchers (/lua/meta/art)
+- Meta Scripts
+  - Art (/lua/meta/art)
+  - Fetcher (/lua/meta/fetcher)
+  - Reader (/lua/meta/reader)
 - Playlist parsers (/lua/playlist)
 - Services Discovery (/lua/sd)
 
-## The Global VLC Table
-This table is accessible through Lua scripts as `vlc` and contains several useful vaues, functions and tables that provide access to VLC data and functinoality as well as some helpful utilities.
-
-## Libraries
-Libraries are accessed through the `vlc` table and are defined in the VLC source code in the [libs folder](https://code.videolan.org/videolan/vlc/-/blob/master/modules/lua/libs) of the Lua module. Different libraries are available in different types of Lua scripts.
+## Modules
+In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1/manual.html#5.3) that work kind of like "libraries" do in other languages (this might be why they're implemented in VLC source code under [libs](https://code.videolan.org/videolan/vlc/-/blob/master/modules/lua/libs)). Normally the programmer would use the `require` keyword to include modules in their code, but VLC's Lua environment does the requiring on it's end. Modules are available via the global `vlc` table, depending on the type of script that is running.
 
 | Name | Symbol(s) | Description | Availability |
 | ---- | --------- | ----------- | ------------ |
-| [Configuration](https://verghost.com/vlc-lua-docs/config) | `config` | Access and modify VLC configuration options | All types |
-| [Dialog](https://verghost.com/vlc-lua-docs/dialog) | `dialog` | Interface to the DialogUI object | Unknown
-| [Equalizer](https://verghost.com/vlc-lua-docs/equalizer) | `equalizer` | Access and modify equalizer settings and presets | Not in extension / Unkown |
-| [GetText](https://verghost.com/vlc-lua-docs/iandl) | `gettext` | Alias for libvlc [gettext](https://en.wikipedia.org/wiki/Gettext) | All types |
-| [Errno](https://verghost.com/vlc-lua-docs/errno) | `errno` | Error values | Unknown |
+| [Configuration](https://verghost.com/vlc-lua-docs/config) | `config` | Access and modify VLC configuration options | Extension, Interface |
+| [Dialog](https://verghost.com/vlc-lua-docs/dialog) | `dialog` | Interface to the DialogUI object | Extension |
+| [Equalizer](https://verghost.com/vlc-lua-docs/equalizer) | `equalizer` | Access and modify equalizer settings and presets | Interface |
+| [GetText](https://verghost.com/vlc-lua-docs/iandl) | `gettext` | Alias for libvlc [gettext](https://en.wikipedia.org/wiki/Gettext) | Interface, Service Discovery |
+| [Errno](https://verghost.com/vlc-lua-docs/errno) | `errno` | Error values | Extension, Interface |
 | [HTTPd](https://verghost.com/vlc-lua-docs/httpd)  | `httpd` | Interface to the VLC HTTP Daemon constructor | Interface |
-| [Input/Output](https://verghost.com/vlc-lua-docs/io)  | `io` | Input/Output (i.e. file read/write, directories, etc...) | Unknown |
-| [Messages](https://verghost.com/vlc-lua-docs/msg)  | `msg` | Output to the Messages console (Tools->Messages) | Unknown |
+| [Input/Output](https://verghost.com/vlc-lua-docs/io)  | `io` | Input/Output (i.e. file read/write, directories, etc...) | Extension, Interface |
+| [Messages](https://verghost.com/vlc-lua-docs/msg)  | `msg` | Output to the Messages console (Tools->Messages) | All types |
 | [Miscellaneous](https://verghost.com/vlc-lua-docs/misc)  | `misc` | Uncategroized functionality | Interface |
 | [Network](https://verghost.com/vlc-lua-docs/net)  | `net` | Various network methods | Interface and Extension |
-| [Objects](https://verghost.com/vlc-lua-docs/object)  | `object` | Provides access to various objects | Unknown |
-| [OSD](https://verghost.com/vlc-lua-docs/osd)  | `osd` | On-screen display functionality (ex. Display OSD messages, modify channels) | Unknown |
+| [Objects](https://verghost.com/vlc-lua-docs/object)  | `object` | Provides access to various objects | Extension, Interface, Meta, Service Discovery |
+| [OSD](https://verghost.com/vlc-lua-docs/osd)  | `osd` | On-screen display functionality (ex. Display OSD messages, modify channels) | Extension, Interface |
 | [Player](https://verghost.com/vlc-lua-docs/player)  | `player` | Interface to VLC player | Unknown |
 | [Playlist](https://verghost.com/vlc-lua-docs/playlist)  | `playlist` | Access and modify playlists | Unknown |
 | [Random](https://verghost.com/vlc-lua-docs/rand)  | `rand` | Get random numbers/bytes | Unknown |
