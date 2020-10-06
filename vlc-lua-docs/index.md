@@ -22,18 +22,18 @@ There are a few different types of lua scripts, each with their own purpose, fun
 - Playlist parsers (/lua/playlist)
 - Services Discovery (/lua/sd)
 
-## The Global VLC Object
-This object is accessible through Lua scripts as `vlc` and contains several "modules" that are accessed via their own symbols (ex. `vlc.config`). Some modules just contain a constructor or instance method for an object type, while others contain useful functions or data fields. These modules provide access to VLC data and functinoality as well as some helpful utilities.
-Different modules are available in different types of Lua scripts.
+## The Global VLC Table
+This table is accessible through Lua scripts as `vlc` and contains several useful vaues, functions and tables that provide access to VLC data and functinoality as well as some helpful utilities.
 
-## Modules (Alphabetical order)
+## Libraries
+Libraries are accessed through the `vlc` table and are defined in the VLC source code in the [libs.h](https://code.videolan.org/videolan/vlc/-/blob/master/modules/lua/libs.h) header file. Different libraries are available in different types of Lua scripts.
 
 | Name | Symbol(s) | Description | Availability |
 | ---- | --------- | ----------- | ------------ |
-| [Config](https://verghost.com/vlc-lua-docs/config) | `config` | Access and modify VLC configuration options | All types |
+| [Configuration](https://verghost.com/vlc-lua-docs/config) | `config` | Access and modify VLC configuration options | All types |
 | [Dialog](https://verghost.com/vlc-lua-docs/dialog) | `dialog` | Interface to the DialogUI object | Unknown
 | [Equalizer](https://verghost.com/vlc-lua-docs/equalizer) | `equalizer` | Access and modify equalizer settings and presets | Not in extension / Unkown |
-| [i18n and l10n](https://verghost.com/vlc-lua-docs/iandl) | `gettext` | Alias for libvlc [gettext](https://en.wikipedia.org/wiki/Gettext) | All types |
+| [GetText](https://verghost.com/vlc-lua-docs/iandl) | `gettext` | Alias for libvlc [gettext](https://en.wikipedia.org/wiki/Gettext) | All types |
 | [Errno](https://verghost.com/vlc-lua-docs/errno) | `errno` | Error values | Unknown |
 | [HTTPd](https://verghost.com/vlc-lua-docs/httpd)  | `httpd` | Interface to the VLC HTTP Daemon constructor | Interface |
 | [Input/Output](https://verghost.com/vlc-lua-docs/io)  | `io` | Input/Output (i.e. file read/write, directories, etc...) | Unknown |
