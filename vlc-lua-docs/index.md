@@ -51,9 +51,9 @@ In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1
 | [Variables](https://verghost.com/vlc-lua-docs/var)  | `var` | Interface to VLC internal variables(?) | Unknown |
 | [Video](https://verghost.com/vlc-lua-docs/video)  | `video` | Change video interface | Unknown |
 | [VLM](https://verghost.com/vlc-lua-docs/vlm)  | `vlm` | VideoLAN Manager object instance method | Unknown |
-| [Volume](https://verghost.com/vlc-lua-docs/volume)  | `volume` | Modify volume | Unknown |
-| [Windows](https://verghost.com/vlc-lua-docs/win)  | `win` | Access to Windows console | Windows builds only |
-| [XML](https://verghost.com/vlc-lua-docs/xml)  | `xml` | [XML](https://en.wikipedia.org/wiki/XML) reader | Unknown |
+| [Volume](https://verghost.com/vlc-lua-docs/volume)  | `volume` | Modify volume | Extension, Interface |
+| [Windows](https://verghost.com/vlc-lua-docs/win)  | `win` | Access to Windows console | Extension, Interface (Windows builds only) |
+| [XML](https://verghost.com/vlc-lua-docs/xml)  | `xml` | [XML](https://en.wikipedia.org/wiki/XML) reader | All types |
 
 ## Events
 While a custom script is running, a number of different functions (which may or may not be defined in the custom script) are called by VLC. For those familiar with JavaScript in web browsers, these function calls can be thought of like [DOM events](https://developer.mozilla.org/en-US/docs/Web/Events).
