@@ -26,7 +26,7 @@ There are a few different types of lua scripts, each with their own purpose, fun
 - Services Discovery (/lua/sd)
 
 ## Modules
-In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1/manual.html#5.3) that work kind of like "libraries" do in other languages (this might be why they're implemented in VLC source code under [libs](https://code.videolan.org/videolan/vlc/-/blob/master/modules/lua/libs)). Normally the programmer would use the `require` keyword to include modules in their code, but VLC's Lua environment does the requiring on it's end. Modules are available via the global `vlc` table, depending on the type of script that is running.
+In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1/manual.html#5.3) that work kind of like "libraries" do in other languages (this might be why, with a few exceptions, they're implemented in VLC source code under [libs](https://code.videolan.org/videolan/vlc/-/blob/master/modules/lua/libs)). Normally the programmer would use the `require` keyword to include modules in their code, but VLC's Lua environment does the requiring on it's end. Modules are available via the global `vlc` table, depending on the type of script that is running.
 
 | Name | Symbol(s) | Description | Availability |
 | ---- | --------- | ----------- | ------------ |
@@ -40,7 +40,7 @@ In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1
 | [Messages](https://verghost.com/vlc-lua-docs/msg)  | `msg` | Output to the Messages console (Tools->Messages) | All types |
 | [Miscellaneous](https://verghost.com/vlc-lua-docs/misc)  | `misc` | Uncategroized functionality | Interface |
 | [Network](https://verghost.com/vlc-lua-docs/net)  | `net` | Various network methods | Interface and Extension |
-| [Objects](https://verghost.com/vlc-lua-docs/object)  | `object` | Provides access to various objects | Extension, Interface, Meta, Service Discovery |
+| [Object](https://verghost.com/vlc-lua-docs/object)  | `object` | Provides access to various objects | Extension, Interface, Meta, Service Discovery |
 | [OSD](https://verghost.com/vlc-lua-docs/osd)  | `osd` | On-screen display functionality (ex. Display OSD messages, modify channels) | Extension, Interface |
 | [Player](https://verghost.com/vlc-lua-docs/player)  | `player` | Interface to VLC player | Unknown |
 | [Playlist](https://verghost.com/vlc-lua-docs/playlist)  | `playlist` | Access and modify playlists | Unknown |
@@ -55,9 +55,8 @@ In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1
 | [Windows](https://verghost.com/vlc-lua-docs/win)  | `win` | Access to Windows console | Extension, Interface (Windows builds only) |
 | [XML](https://verghost.com/vlc-lua-docs/xml)  | `xml` | [XML](https://en.wikipedia.org/wiki/XML) reader | All types |
 
-## Events
-While a custom script is running, a number of different functions (which may or may not be defined in the custom script) are called by VLC. For those familiar with JavaScript in web browsers, these function calls can be thought of like [DOM events](https://developer.mozilla.org/en-US/docs/Web/Events).
-Like modules, events differ by the type of script.
+## Special Functions
+While a custom script is running, a number of different functions are called by VLC. These functions are expected to be defined by the custom script and are often necessary if a script is to work properly. For some of these functions, there are return values that VLC expects while others can be thought of like [DOM events](https://developer.mozilla.org/en-US/docs/Web/Events), which are called by VLC when some action takes place in the main program. Like with Modules, different types of scripts require different function definitions. Like modules, these special functions differ by the type of script.
 
 ## Luac
-TODO
+Luac is a command line tool that lets you compile Lua scripts.
