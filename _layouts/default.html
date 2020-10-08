@@ -13,9 +13,27 @@
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
       {% if page.title != "Verghost" %}
         <h4 align="left"><a id="vg_link_back" href="../">Back</a></h4>
+        
+        <script>
+          window.addEventListener("load", function() {
+            // Create mini-nav
+            try {
+              let paths = new URL(window.location).pathname.split("/").reverse();
+              let mn = document.querySelector("#mini-nav");
+              paths.forEach((e, i) => {
+                let atag = document.createElement("a");
+                atag.innerText = (i ==== 0)? `${e}` : `->${e}`;
+                atag.href = "../".repeat(i+1);
+                mn.appendChild(atag);
+              });
+            } catch(e) {}
+          });
+        </script>
       {% endif %}
     </header>
-
+    
+    <h3 align="left" id="mini-nav"></h3>
+    
     <main id="content" class="main-content" role="main">
       {{ content }}
 
