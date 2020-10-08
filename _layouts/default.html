@@ -22,10 +22,12 @@
               let mn = document.querySelector("#mini-nav");
               paths.forEach((e, i) => {
                 if(e === "") e = "Home";
-                let atag = document.createElement("a");
-                atag.innerText = (i === 0)? ` ${e}` : ` 🔦 ${e}`;
+                let atag = document.createElement("a"), ptag = document.createElement("p");
+                ptag.innerText = (i === 0)? " " : " 🔦 ";
+                atag.innerText = (i === 0)? `${e}` : `${e}`;
                 atag.href = "../".repeat(i+1);
-                mn.appendChild(atag);
+                ptag.appendChild(atag);
+                mn.appendChild(ptag);
               });
             } catch(e) {}
           });
