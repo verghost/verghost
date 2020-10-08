@@ -30,7 +30,7 @@
                 let atag = document.createElement("a"), ptag = document.createElement("p");
                 ptag.innerText = "🔦 ";
                 atag.innerText = e;
-                atag.href = (i === (paths.length - 1))? "./" : "../".repeat(i+1);
+                atag.href = (i === (paths.length - 1))? "./" : "../".repeat(paths.length - i);
                 ptag.appendChild(atag);
                 mn.appendChild(ptag);
               });
