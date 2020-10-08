@@ -26,7 +26,7 @@
               let paths = new URL(window.location).pathname.split("/");
               let mn = document.querySelector("#mini-nav");
               paths.forEach((e, i) => {
-                if(e === "" && i === (paths.length - 1)) return;
+                if(e === "" && i === (paths.length - 1) && i > 0) return;
                 if(e === "") e = "Home";
                 let atag = document.createElement("a"), ptag = document.createElement("p");
                 ptag.innerText = "🔦 ";
