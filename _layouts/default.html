@@ -12,9 +12,15 @@
       <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
       {% if page.title != "Verghost" %}
-        <h4 align="left"><a id="vg_link_back" href="../">Back</a></h4>
+        <h4 align="left">
+          {% if page.doubleb == "true" %} 
+            <a id="vg_link_back" href="../../">Back</a>
+          {% else %}
+            <a id="vg_link_back" href="../">Back</a>
+          {% endif %}
+        </h4>
       {% endif %}
-      {% if page.doubleb == "true" %}
+      {% if page.title == "NA" %}
       <script>
         window.onload = function() {
           document.querySelector("#vg_link_back").click();
