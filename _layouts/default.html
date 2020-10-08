@@ -21,7 +21,7 @@
               let paths = new URL(window.location).pathname.split("/");
               let mn = document.querySelector("#mini-nav");
               paths.forEach((e, i) => {
-                if(e === "") return;
+                if(e === "") e = "Home";
                 let atag = document.createElement("a");
                 atag.innerText = (i === 0)? `${e}` : ` 🔦 ${e}`;
                 atag.href = "../".repeat(i+1);
