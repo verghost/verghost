@@ -32,7 +32,7 @@
                 i++;
                 if(e === "") e = "Home";
                 let atag = document.createElement("a"), ptag = document.createElement("p");
-                ptag.innerText = "🔦 ";
+                if(i > 1) ptag.innerText = " 🔦 ";
                 atag.innerText = e;
                 atag.href = (i === paths.length)? "./" : "../".repeat(paths.length - i);
                 ptag.appendChild(atag);
