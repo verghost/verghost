@@ -29,12 +29,11 @@
               paths.forEach((e, i) => {
                 i++;
                 if(e === "") e = "Home";
-                let atag = document.createElement("a"), ptag = document.createElement("p");
-                ptag.innerText = "🔦 ";
+                let atag = document.createElement("a");
+                if(i > 1) mn.innerText += " 🔦 ";
                 atag.innerText = e;
                 atag.href = (i === paths.length)? "./" : "../".repeat(paths.length - i);
-                ptag.appendChild(atag);
-                mn.appendChild(ptag);
+                mn.appendChild(atag);
               });
             } catch(e) {}
           });
