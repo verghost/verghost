@@ -19,29 +19,25 @@
     <header class="page-header" role="banner">
       <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
-      {% if page.title != "Verghost" %}
-        <h4 align="left"><a id="vg_link_back" href="../">Back</a></h4>
-        
-        <script>
-          window.addEventListener("load", function() {
-            // Create mini-nav
-            try {
-              let paths = new URL(window.location).pathname.replace(/\/+$/, '').split("/");
-              let mn = document.querySelector("#mini-nav");
-              paths.forEach((e, i) => {
-                i++;
-                if(e === "") e = "Home";
-                let atag = document.createElement("a"), ptag = document.createElement("p");
-                if(i > 1) ptag.innerText = " 🔦 ";
-                atag.innerText = e;
-                atag.href = (i === paths.length)? "./" : "../".repeat(paths.length - i);
-                ptag.appendChild(atag);
-                mn.appendChild(ptag);
-              });
-            } catch(e) {}
-          });
-        </script>
-      {% endif %}
+      <script>
+        window.addEventListener("load", function() {
+          // Create mini-nav
+          try {
+            let paths = new URL(window.location).pathname.replace(/\/+$/, '').split("/");
+            let mn = document.querySelector("#mini-nav");
+            paths.forEach((e, i) => {
+              i++;
+              if(e === "") e = "Home";
+              let atag = document.createElement("a"), ptag = document.createElement("p");
+              if(i > 1) ptag.innerText = " 🔦 ";
+              atag.innerText = e;
+              atag.href = (i === paths.length)? "./" : "../".repeat(paths.length - i);
+              ptag.appendChild(atag);
+              mn.appendChild(ptag);
+            });
+          } catch(e) {}
+        });
+      </script>
     </header>
     
     <h3 id="mini-nav"></h3>
