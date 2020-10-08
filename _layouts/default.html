@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <style>
       #mini-nav {
-        display: inline;
         margin-left: 20px;
+      }
+      #mini-nav > p {
+        display: inline;
       }
     </style>
   </head>
@@ -27,13 +29,13 @@
               let paths = new URL(window.location).pathname.replace(/\/+$/, '').split("/");
               let mn = document.querySelector("#mini-nav");
               paths.forEach((e, i) => {
-                i++;
                 if(e === "") e = "Home";
-                let atag = document.createElement("a");
-                if(i > 1) mn.innerText += " 🔦 ";
+                let atag = document.createElement("a"), ptag = document.createElement("p");
+                ptag.innerText = "🔦 ";
                 atag.innerText = e;
-                atag.href = (i === paths.length)? "./" : "../".repeat(paths.length - i);
-                mn.appendChild(atag);
+                atag.href = (i === (paths.length - 1))? "./" : "../".repeat(i+1);
+                ptag.appendChild(atag);
+                mn.appendChild(ptag);
               });
             } catch(e) {}
           });
