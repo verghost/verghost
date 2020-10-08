@@ -22,7 +22,7 @@
               let mn = document.querySelector("#mini-nav");
               paths.forEach((e, i) => {
                 let atag = document.createElement("a");
-                atag.innerText = (i === 0)? `${e}` : `->${e}`;
+                atag.innerText = (i === 0)? `${e}` : ` -> ${e}`;
                 atag.href = "../".repeat(i+1);
                 mn.appendChild(atag);
               });
@@ -32,7 +32,7 @@
       {% endif %}
     </header>
     
-    <h3 align="left" id="mini-nav"></h3>
+    <h3 id="mini-nav"></h3>
     
     <main id="content" class="main-content" role="main">
       {{ content }}
