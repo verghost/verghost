@@ -23,7 +23,8 @@
           window.addEventListener("load", function() {
             // Create mini-nav
             try {
-              let paths = new URL(window.location.replace(/\/+$/, '')).pathname.split("/");
+              let loc = window.location;
+              let paths = new URL(loc.replace(/\/+$/, '')).pathname.split("/");
               let mn = document.querySelector("#mini-nav");
               paths.forEach((e, i) => {
                 if(e === "") e = "Home";
