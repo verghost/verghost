@@ -22,7 +22,7 @@
               let mn = document.querySelector("#mini-nav");
               paths.forEach((e, i) => {
                 let atag = document.createElement("a");
-                atag.innerText = (i ==== 0)? `${e}` : `->${e}`;
+                atag.innerText = (i === 0)? `${e}` : `->${e}`;
                 atag.href = "../".repeat(i+1);
                 mn.appendChild(atag);
               });
