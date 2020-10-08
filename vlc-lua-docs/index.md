@@ -23,6 +23,7 @@ Scripts are placed into their install directories as text-based '.lua' source co
 - Mac OS X (current user): /Users/%your_name%/Library/Application Support/org.videolan.vlc/lua/
 
 ### Types of Plugins
+hello
 
 | Name | Description | Install Subdirectory | Version Range |
 | ---- | ----------- | -------------------- | ------------- |
