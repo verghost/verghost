@@ -42,6 +42,7 @@ In Lua, there are special tables called [Modules](https://www.lua.org/manual/5.1
 <!-- FIXME?: Maybe the table on the home page should be representative of the latest release -->
 The following table holds all defined modules in the [repo](https://code.videolan.org/videolan/vlc/), not necessarily the latest release. For more info, see full module pages.
 
+
 | Name | Symbol(s) | Description | Availability |
 | ---- | --------- | ----------- | ------------ |
 | [Configuration](https://verghost.com/vlc-lua-docs/m/config) | `config` | Access and modify VLC configuration options | Extension, Interface |
