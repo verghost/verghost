@@ -23,15 +23,14 @@
           window.addEventListener("load", function() {
             // Create mini-nav
             try {
-              let paths = new URL(window.location).pathname.split("/");
+              let paths = new URL(window.location.replace(/\/+$/, '')).pathname.split("/");
               let mn = document.querySelector("#mini-nav");
               paths.forEach((e, i) => {
-                if(e === "" && i === (paths.length - 1) && i > 0) return;
                 if(e === "") e = "Home";
                 let atag = document.createElement("a"), ptag = document.createElement("p");
                 ptag.innerText = "🔦 ";
                 atag.innerText = e;
-                atag.href = "../".repeat(i);
+                atag.href = (i === (paths.length - 1))? "./" : "../".repeat(i+1);
                 ptag.appendChild(atag);
                 mn.appendChild(ptag);
               });
