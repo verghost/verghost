@@ -24,8 +24,6 @@ Scripts are placed into their install directories as text-based '.lua' source co
 
 ### Types of Plugins
 
-hello
-
 | Name | Description | Install Subdirectory | Version Range |
 | ---- | ----------- | -------------------- | ------------- |
 | [Art](https://verghost.com/vlc-lua-docs/t/art) | ? | /lua/meta/art/ | ? |
@@ -58,8 +56,6 @@ The following table holds all defined modules in the [repo](https://code.videola
 | [Network](https://verghost.com/vlc-lua-docs/m/net)  | `net` | Various network methods | Extension, Interface |
 | [Object](https://verghost.com/vlc-lua-docs/m/object)  | `object` | Provides access to various objects | Extension, Interface, Meta, Service Discovery |
 | [OSD](https://verghost.com/vlc-lua-docs/m/osd)  | `osd` | On-screen display functionality (ex. Display OSD messages, modify channels) | Extension, Interface |
-<!-- NOTE: The "Player" module is actually just the "input" module from 3.0.x releases; it's even still defined in libs/input.h -->
-<!-- Also, input.c still contains the luaopen_input_item call, which is used by both the playlist and player modules -->
 | [Player](https://verghost.com/vlc-lua-docs/m/input) | `player` | Access the VLC player interface | Extension, Interface, Service Discovery |
 | [Playlist](https://verghost.com/vlc-lua-docs/m/playlist)  | `playlist` | Access and modify playlists | Extension, Interface |
 | [Random](https://verghost.com/vlc-lua-docs/m/rand)  | `rand` | Get random numbers/bytes | Extension, Interface |
