@@ -29,7 +29,7 @@
                 if(e === "") e = "Home";
                 let atag = document.createElement("a"), ptag = document.createElement("p");
                 ptag.innerText = "🔦 ";
-                atag.innerText = (i === 0)? `${e}` : `${e}`;
+                atag.innerText = e;
                 atag.href = "../".repeat(i+1);
                 ptag.appendChild(atag);
                 mn.appendChild(ptag);
