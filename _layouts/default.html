@@ -6,6 +6,11 @@
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <style>
+      #mini-nav {
+        margin-left: 20px;
+      }
+    </style>
   </head>
   <body>
     <header class="page-header" role="banner">
@@ -23,7 +28,7 @@
               paths.forEach((e, i) => {
                 if(e === "") e = "Home";
                 let atag = document.createElement("a"), ptag = document.createElement("p");
-                ptag.innerText = (i === 0)? " " : " 🔦 ";
+                ptag.innerText = "🔦 ";
                 atag.innerText = (i === 0)? `${e}` : `${e}`;
                 atag.href = "../".repeat(i+1);
                 ptag.appendChild(atag);
