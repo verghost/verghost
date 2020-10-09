@@ -39,9 +39,6 @@
 		  background-color: #555;
 		  color: white;
 		}
-		.sidebar-close {
-			align: right;
-		}
 		
 		#sidebar-icon {
 			align: left;
@@ -79,15 +76,17 @@
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
     </header>
     
-	 <div id="sidebar-icon">
-		<button id="btn-sidebar-icon" class="squarei sidebar-close" onclick="sidebar_toggle()">☰</button>
-	 </div>
 	 
-	 <nav id="vgsidebar" class="sidebar" style="transform: translateX(-100%)">
-		<a class="squarei">Test Link 1</a>
-		<a class="squarei">Test Link 2</a>
-		<a class="squarei">Test Link 3</a>
-		<a class="squarei">Test Link 4</a>
+	 
+	 <nav id="vgsidebar" class="sidebar">
+		<button id="sidebar-icon" class="squarei sidebar-close" onclick="sidebar_toggle()">☰</button>
+		
+		<div id="sidebar-panel" style="transform: translateX(-100%)">
+			<a class="squarei">Test Link 1</a>
+			<a class="squarei">Test Link 2</a>
+			<a class="squarei">Test Link 3</a>
+			<a class="squarei">Test Link 4</a>
+		</div>
 	 </nav>
 	 
     <main id="content" class="main-content" role="main">
@@ -105,11 +104,11 @@
 		var sidebar_open = false;
 		function sidebar_toggle() {
 			if(sidebar_open) {
-				document.querySelector("#vgsidebar").style.transform = 'translateX(-100%)';
+				document.querySelector("#sidebar-panel").style.transform = 'translateX(-100%)';
 				document.querySelector("#btn-sidebar-icon").style.transform = 'none';
 				sidebar_open = true;
 			} else {
-				document.querySelector("#vgsidebar").style.transform = 'none';
+				document.querySelector("#sidebar-panel").style.transform = 'none';
 				document.querySelector("#btn-sidebar-icon").style.transform = 'rotateZ(90deg)';
 				sidebar_open = false;
 			}
