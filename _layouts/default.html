@@ -15,7 +15,6 @@
 		  position: fixed;
 		  height: 100%;
 		  overflow: auto;
-		  transform: translateX(-100%);
 		  transition: transform .3s ease-in;
 		  z-index: 1000000001;
 		}
@@ -36,9 +35,12 @@
 		  background-color: #555;
 		  color: white;
 		}
-		
-		.sidebar-open {
+		.sidebar-close {
+			align: right;
+		}
+		.sidebar-icon {
 			align: left;
+			transition: transform .3s ease-out;
 		}
 		
 		
@@ -72,13 +74,13 @@
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
     </header>
     
-	 <div id="vgsidebar" class="sidebar">
+	 <div id="vgsidebar" class="sidebar" style="transform: translateX(-100%)">
 		<button onclick="sidebar_close()" class="btn-squarei">Close &times;</button>
 	 
 	 </div>
 	 
 	 <div class="sidebar-icon">
-		<button class="btn-squarei sidebar-open" onclick="sidebar_open()">☰</button>
+		<button class="btn-squarei sidebar-close" onclick="sidebar_open()">☰</button>
 	 </div>
 	 
     <main id="content" class="main-content" role="main">
@@ -97,7 +99,7 @@
 			document.querySelector("#vgsidebar").style.transform = 'none';
 		}
 		function sidebar_close() {
-			document.querySelector("#vgsidebar").style.display = 'translateX(-100%);';
+			document.querySelector("#vgsidebar").style.transform = 'translateX(-100%);';
 		}
 	 </script>
   </body>
