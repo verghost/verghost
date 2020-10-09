@@ -110,11 +110,11 @@
 			if(sidebar_open) {
 				document.querySelector("#sidebar-panel").style.transform = 'translateX(-100%)';
 				document.querySelector("#sidebar-icon").style.transform = 'none';
-				sidebar_open = true;
+				sidebar_open = false;
 			} else {
 				document.querySelector("#sidebar-panel").style.transform = 'none';
 				document.querySelector("#sidebar-icon").style.transform = 'rotateZ(90deg)';
-				sidebar_open = false;
+				sidebar_open = true;
 			}
 			
 		}
