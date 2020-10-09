@@ -38,7 +38,8 @@
 		.sidebar-close {
 			align: right;
 		}
-		.sidebar-icon {
+		
+		#sidebar-icon {
 			align: left;
 			transition: transform .3s ease-out;
 		}
@@ -79,7 +80,7 @@
 	 
 	 </div>
 	 
-	 <div class="sidebar-icon">
+	 <div id="sidebar-icon">
 		<button class="btn-squarei sidebar-close" onclick="sidebar_open()">☰</button>
 	 </div>
 	 
@@ -97,9 +98,11 @@
 	 <script>
 		function sidebar_open() {
 			document.querySelector("#vgsidebar").style.transform = 'none';
+			document.querySelector("#sidebar-icon").style.transform = 'translateX(-100%)';
 		}
 		function sidebar_close() {
 			document.querySelector("#vgsidebar").style.transform = 'translateX(-100%)';
+			document.querySelector("#sidebar-icon").style.transform = 'none';
 		}
 	 </script>
   </body>
