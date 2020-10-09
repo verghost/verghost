@@ -18,6 +18,7 @@
 		  bottom: 0 !important;
 		  height: 100%;
 		  overflow: visible;
+		  z-index: 1000000000;
 		}
 
 		.sidebar a {
@@ -39,11 +40,15 @@
 		
 		#sidebar-panel {
 			background-color: #f1f1f1;
+			position: relative;
+			padding: 70px;
 			transition: transform .3s ease-in;
 		}
 		
 		#sidebar-icon {
 			align: left;
+			background-color: #f1f1f1;
+			position: absolute;
 			z-index: 1000000001;
 			transition: transform .3s ease-out;
 		}
@@ -89,7 +94,6 @@
 			<a class="squarei">Test Link 2</a>
 			<a class="squarei">Test Link 3</a>
 			<a class="squarei">Test Link 4</a>
-			<button id="btn-sidebar-icon" class="squarei sidebar-close" onclick="sidebar_toggle()" style="transform:rotateZ(90deg)">☰</button>
 		</div>
 	 </div>
 	 
@@ -109,11 +113,11 @@
 		function sidebar_toggle() {
 			if(sidebar_open) {
 				document.querySelector("#sidebar-panel").style.transform = 'translateX(-100%)';
-				document.querySelector("#sidebar-icon").style.transform = 'none';
+				document.querySelector("#btn-sidebar-icon").style.transform = 'none';
 				sidebar_open = false;
 			} else {
 				document.querySelector("#sidebar-panel").style.transform = 'none';
-				document.querySelector("#sidebar-icon").style.transform = 'rotateZ(90deg)';
+				document.querySelector("#btn-sidebar-icon").style.transform = 'rotateZ(90deg)';
 				sidebar_open = true;
 			}
 			
