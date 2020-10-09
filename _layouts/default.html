@@ -54,9 +54,6 @@
 			margin: 5px;
 		}
 		.btn-squarei:hover {
-			background-color: light-grey;
-			color: darkgrey;
-			opacity: 100;
 			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 		}
 		.btn-squarei:active {
@@ -72,7 +69,7 @@
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
     </header>
     
-	 <div class="sidebar" style="display: none">
+	 <div id="vgsidebar" class="sidebar" style="display: none">
 		<button onclick="sidebar_close()" class="btn-squarei">Close &times;</button>
 	 
 	 </div>
@@ -93,8 +90,12 @@
     </main>
 	 
 	 <script>
-		function sidebar_open() {}
-		function sidebar_close() {}
+		function sidebar_open() {
+			document.querySelector("#vgsidebar").style.display = 'block';
+		}
+		function sidebar_close() {
+			document.querySelector("#vgsidebar").style.display = 'none';
+		}
 	 </script>
   </body>
 </html>
