@@ -11,7 +11,6 @@
 		  margin: 0;
 		  padding: 0;
 		  width: 200px;
-		  background-color: inherit;
 		  position: absolute;
 		  box-sizing: border-box;
 		  left: 0 !important;
@@ -19,7 +18,6 @@
 		  bottom: 0 !important;
 		  height: 100%;
 		  overflow: visible;
-		  z-index: -1;
 		}
 
 		.sidebar a {
@@ -81,9 +79,9 @@
     </header>
     
 	 
-	 
-	 <nav id="vgsidebar" class="sidebar">
-		<button id="sidebar-icon" class="squarei sidebar-close" onclick="sidebar_toggle()">☰</button>
+	 <button id="sidebar-icon" class="squarei sidebar-close" onclick="sidebar_toggle()">☰</button>
+	 <div id="vgsidebar" class="sidebar">
+		
 		
 		<div id="sidebar-panel" style="transform: translateX(-100%)">
 			<a class="squarei">Test Link 1</a>
@@ -91,7 +89,7 @@
 			<a class="squarei">Test Link 3</a>
 			<a class="squarei">Test Link 4</a>
 		</div>
-	 </nav>
+	 </div>
 	 
     <main id="content" class="main-content" role="main">
       {{ content }}
