@@ -38,14 +38,12 @@
 		}
 		
 		#sidebar-panel {
-			background-color: #f1f1f1;
 			position: relative;
 			padding-top: 70px;
 			transition: transform .3s ease-in;
 		}
 		
 		#sidebar-icon {
-			background-color: #f1f1f1;
 			position: absolute;
 			z-index: 1000000001;
 			transition: transform .3s ease-out;
@@ -75,8 +73,8 @@
     </style>
   </head>
   <body>
-    <header class="page-header" role="banner">
-      <h1 class="project-name"><a href="/">{{ page.title | default: site.title | default: site.github.repository_name }}</a></h1>
+    <header class="page-header" role="banner" style="padding-top: 20px; padding-bottom: 10px;">
+      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
     </header>
     
@@ -87,10 +85,7 @@
 			<button id="btn-sidebar-icon" class="squarei sidebar-close" onclick="sidebar_toggle()">☰</button>
 		 </div>
 		<div id="sidebar-panel" class="sidebar" style="transform: translateX(-100%)">
-			<a class="squarei">Test Link 1</a>
-			<a class="squarei">Test Link 2</a>
-			<a class="squarei">Test Link 3</a>
-			<a class="squarei">Test Link 4</a>
+			<a class="squarei" href="/">Home</a>
 		</div>
 	 </div>
 	 
