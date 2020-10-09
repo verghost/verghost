@@ -7,11 +7,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <style>
-      #mini-nav {
-        margin-left: 20px;
-      }
-      #mini-nav > p {
-        display: inline;
+      .nav {
+        display: flex;
+        justify-content: space-between;
       }
     </style>
   </head>
@@ -19,28 +17,12 @@
     <header class="page-header" role="banner">
       <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
-      <h3 id="mini-nav"></h3>
-      {% if page.title != "Verghost" %}
-      <script>
-        window.addEventListener("load", function() {
-          // Create mini-nav
-          try {
-            let paths = new URL(window.location).pathname.replace(/\/+$/, '').split("/");
-            let mn = document.querySelector("#mini-nav");
-            paths.forEach((e, i) => {
-              i++;
-              if(e === "") e = "Home";
-              let atag = document.createElement("a"), ptag = document.createElement("p");
-              if(i > 1) ptag.innerText = " 🔦 ";
-              atag.innerText = e;
-              atag.href = (i === paths.length)? "./" : "../".repeat(paths.length - i);
-              ptag.appendChild(atag);
-              mn.appendChild(ptag);
-            });
-          } catch(e) {}
-        });
-      </script>
-      {% endif %}
+      <div class="nav">
+        <a>Home</a>
+        <a>Home</a>
+        <a>Home</a>
+        <a>Home</a>
+      </div>
     </header>
     
     <main id="content" class="main-content" role="main">
