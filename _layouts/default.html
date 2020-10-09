@@ -12,11 +12,15 @@
 		  padding: 0;
 		  width: 200px;
 		  background-color: #f1f1f1;
-		  position: fixed;
+		  position: absolute;
+		  box-sizing: border-box;
+		  left: 0 !important;
+		  top: 0 !important;
+		  bottom: 0 !important;
 		  height: 100%;
-		  overflow: auto;
+		  overflow: visible;
 		  transition: transform .3s ease-in;
-		  z-index: 1000000001;
+		  z-index: 1000000000;
 		}
 
 		.sidebar a {
@@ -41,9 +45,9 @@
 		
 		#sidebar-icon {
 			align: left;
+			z-index: 1000000001;
 			transition: transform .3s ease-out;
 		}
-		
 		
 		.btn-squarei {
 			background-color: inherit;
@@ -75,14 +79,12 @@
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
     </header>
     
-	 <div id="vgsidebar" class="sidebar" style="transform: translateX(-100%)">
-		<button onclick="sidebar_close()" class="btn-squarei">Close &times;</button>
-	 
-	 </div>
-	 
 	 <div id="sidebar-icon">
-		<button class="btn-squarei sidebar-close" onclick="sidebar_open()">☰</button>
+		<button id="btn-sidebar-icon" class="btn-squarei sidebar-close" onclick="sidebar_toggle()">☰</button>
 	 </div>
+	 
+	 <nav id="vgsidebar" class="sidebar" style="transform: translateX(-100%)">
+	 </nav>
 	 
     <main id="content" class="main-content" role="main">
       {{ content }}
@@ -96,13 +98,18 @@
     </main>
 	 
 	 <script>
-		function sidebar_open() {
-			document.querySelector("#vgsidebar").style.transform = 'none';
-			document.querySelector("#sidebar-icon").style.transform = 'translateX(-100%)';
-		}
-		function sidebar_close() {
-			document.querySelector("#vgsidebar").style.transform = 'translateX(-100%)';
-			document.querySelector("#sidebar-icon").style.transform = 'none';
+		var sidebar_open = false;
+		function sidebar_toggle() {
+			if(sidebar_open) {
+				document.querySelector("#vgsidebar").style.transform = 'none';
+				document.querySelector("#btn-sidebar-icon").style.transform = 'rotateZ(90deg)';
+				sidebar_open = true;
+			} else {
+				document.querySelector("#vgsidebar").style.transform = 'translateX(-100%)';
+				document.querySelector("#btn-sidebar-icon").style.transform = 'none';
+				sidebar_open = false;
+			}
+			
 		}
 	 </script>
   </body>
