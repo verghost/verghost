@@ -1,11 +1,10 @@
 ---
 project: vld
-vld-meta-version: 9.0,1.0:2.0,9.0,+
+vgsidebar: ../:Module List,/vlc-lua-docs:VLC Lua Docs
 ---
 
 # Configuration Module
-
-<h6 class="vld-version">Version: &#62;9.0</h6>
+##### Version 9.0+
 
 Access and modify configuration options.  
 Option names can be found in the `vlcrc` file in the folder given by `vlc.config.configdir()` (usually %appdata%\vlc\ on windows).
