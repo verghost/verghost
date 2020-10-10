@@ -5,7 +5,7 @@ var dq = (s) => {
 };
 
 var verghostjs = {};
-
+var testlist = ["a", "b", "c", "d"];
 verghostjs.vgsidebar = {
 	"": null,
 	"vlc-lua-docs": {
