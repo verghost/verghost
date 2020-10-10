@@ -95,7 +95,7 @@
 		  		{% assign vgsentries = page.vgsidebar | split: "," %}
 				{% for entry in vgsentries %}
 		  			{% assign e = entry | split: ":" %}
-					<a class="squarei" href="./{{ e[0] }}">{{ e[1] }}</a>
+					<a class="squarei" href="{{ e[0] }}">{{ e[1] }}</a>
 				{% endfor %}
 		  	{% endif %}
 	  		<a class="squarei" href="/">About</a>
