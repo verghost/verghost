@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Verghost
-dbg: one
+vgsidebar: contact:Contact
 ---
 
 ### In progress
