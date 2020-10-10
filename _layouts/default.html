@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 
-{% if page.project == "vld" %}
-	{% if page.vld-meta-version %}
-		{% assign versions = page.vld-meta-version | split: "," %}
-	{% endif %}
-{% endif %}
+{% case page.project %}
+	{% when "vld" %}
+		<!-- VLC-Lua-Docs -->
+		{% if page.vld-meta-version %}
+			{% assign versions = page.vld-meta-version | split: "," %}
+		{% endif %}
+	{% else %}
+		<!-- NO_TYPE -->
+{% endcase %}
 
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
@@ -87,9 +91,11 @@
 	   </div>
 	  <div id="sidebar-panel" class="sidebar" style="transform: translateX(-100%)">
 	      	<a class="squarei" href="/">Home</a>
-		  	{% if versions %}
-				{% for ver in versions %}
-					<a class="squarei" href="/">{{ ver }}</a>
+		  	{% if page.vgsidebar %}
+		  		{% assign vgsentries = page.vgsidebar | split: "," %}
+				{% for entry in vgsentries %}
+		  			{% assign e = entry | split: ":" %}
+					<a class="squarei" href="./{{ e[0] }}">{{ e[1] }}</a>
 				{% endfor %}
 		  	{% endif %}
 	  		<a class="squarei" href="/">About</a>
