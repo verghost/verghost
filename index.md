@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Verghost
-vgsidebar: testpage:Big Boy Test,contact:Contact
 ---
 
 ### In progress
