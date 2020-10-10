@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Verghost
-dbg: one
 ---
 
 ### In progress
