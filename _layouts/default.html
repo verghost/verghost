@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+
+{% if page.project == "vld" %}
+	{% if page.vld-meta-version %}
+		{% assign versions = page.vld-meta-version | split: "," %}
+	{% endif %}
+{% endif %}
+
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
     <meta charset="UTF-8">
@@ -67,14 +74,12 @@
 		transition: 0.01s;
 	}
     </style>
-	<script src="/js/vglib.js"></script>
+    <script src="/js/vglib.js"></script>
   </head>
   <body>
     <header class="page-header" role="banner" style="padding-top: 20px; padding-bottom: 10px;">
         <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-	    {% if testlist %}
-        <h2 class="project-tagline">{{ "debug" | default: site.description | default: site.github.project_tagline }}</h2>
-	    {% endif %}
+        <h2 class="project-tagline">{{ page.vld-meta-version | default: site.description | default: site.github.project_tagline }}</h2>
     </header>
     <nav id="vgsidebar">
 	  <div id="sidebar-icon">
@@ -82,6 +87,12 @@
 	   </div>
 	  <div id="sidebar-panel" class="sidebar" style="transform: translateX(-100%)">
 	      	<a class="squarei" href="/">Home</a>
+		  	{% if versions %}
+				{% for ver in versions %}
+					<a class="squarei" href="/">{{ ver }}</a>
+				{% endfor %}
+		  	%{ endif %}
+
 	  </div>
     </nav>
 	 
