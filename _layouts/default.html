@@ -71,7 +71,7 @@
   <body>
     <header class="page-header" role="banner" style="padding-top: 20px; padding-bottom: 10px;">
         <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-        <!-- <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2> -->
+        <h2 class="project-tagline">{{ testlist | default: site.description | default: site.github.project_tagline }}</h2>
     </header>
     <nav id="vgsidebar">
 	  <div id="sidebar-icon">
