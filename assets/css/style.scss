@@ -1,12 +1,11 @@
 ---
 ---
-.language-plaintext code {
+code.language-plaintext {
   color: #e8e6e3;
 }
 
-code > span.p, span.n {
-  color: #e8e6e3;
-}
+code > span.p { color: #e8e6e3; }
+code > span.n { color: #e8e6e3; }
 
 .main-content h2 > code {
   font-size: 1.5rem;
