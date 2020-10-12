@@ -45,5 +45,12 @@ verghostjs.vgsidebar = {
 };
 
 var style_bodge = (e) => {
-	//let func_calls = dq();
+	let p_class = dq("code > span.p");
+	for(let i = 0; i < p_class.length; i++) {
+		let el = p_class[i];
+		if(el.innerText === "(" && el.previousElementSibling && el.previousElementSibling.className === "n") {
+			el.className = "pl-c1";
+		}
+	}
 };
+window.addEventListener('load', style_bodge);
