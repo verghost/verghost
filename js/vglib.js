@@ -43,3 +43,7 @@ verghostjs.vgsidebar = {
 		"t": []
 	}
 };
+
+var style_bodge = (e) => {
+	//let func_calls = dq();
+};
