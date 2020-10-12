@@ -46,6 +46,7 @@ verghostjs.vgsidebar = {
 
 var style_bodge = (e) => {
 	let p_class = dq("code > span.p");
+	if(!p_class) return;
 	for(let i = 0; i < p_class.length; i++) {
 		let el = p_class[i];
 		if(el.innerText === "(" && el.previousElementSibling && el.previousElementSibling.className === "n") {
