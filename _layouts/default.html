@@ -113,6 +113,7 @@
 		</footer>
     </main>
 	<script>
+		var sidebar_hasinit = false;
 		var sidebar_open = false;
 		function sidebar_toggle() {
 			if(sidebar_open) {
@@ -125,6 +126,18 @@
 				sidebar_open = true;
 			}	
 		}
+		window.addEventListener('load', () => { 
+			let ht = dq("#content").getElementsByTagName("h2");
+			let panel = dq("#sidebar-panel");
+			for(let i = 0; i < ht.length; i++) {
+				let atag = document.createElement("a");
+				atag.href = `#${ht[i].id}`;
+				atag.className = "squarei";
+				atag.innerText = ht[i].innerText;
+				panel.appendChild(atag);
+			}
+			sidebar_hasinit = true;
+		});
 	</script>
   </body>
 </html>
