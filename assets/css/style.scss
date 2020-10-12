@@ -2,3 +2,11 @@
 ---
 
 @import 'jekyll-theme-cayman';
+
+/* Github rouge Code Style Bodge */
+code.language-plaintext { color: #e8e6e3; }
+code > span.kd { color: rgb(218, 75, 88); }
+.main-content h2 > code {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
