@@ -2,6 +2,8 @@
 // This is a bodged static content generator
 var dq = (s) => {
 	return document.querySelector(s);
+}, dqa = (s) => {
+	return document.querySelectorAll(s);
 };
 
 var verghostjs = {};
@@ -45,7 +47,7 @@ verghostjs.vgsidebar = {
 };
 
 var style_bodge = (e) => {
-	let p_class = dq("code > span.p");
+	let p_class = dqa("code > span.p");
 	if(!p_class) return;
 	for(let i = 0; i < p_class.length; i++) {
 		let el = p_class[i];
