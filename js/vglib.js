@@ -49,7 +49,7 @@ var style_bodge = (e) => {
 	for(let i = 0; i < p_class.length; i++) {
 		let el = p_class[i];
 		if(el.innerText === "(" && el.previousElementSibling && el.previousElementSibling.className === "n") {
-			el.className = "pl-c1";
+			el.previousElementSibling.className = "pl-c1";
 		}
 	}
 };
