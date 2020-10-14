@@ -80,7 +80,7 @@
 		}
 		document.addEventListener('click', (e) => {
 			let s = e.srcElement;
-			if(e.id.indexOf("sidebar") !== -1) {
+			if(s.id.indexOf("sidebar") !== -1) {
 				sidebar_toggle();
 			} else if(sidebar_open) sidebar_toggle();
 		});
