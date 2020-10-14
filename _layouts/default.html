@@ -80,7 +80,7 @@
 		}
 		
 		window.addEventListener('load', () => { 
-			let ht = dq("#content").getElementsByTagName("h2");
+			let ht = dq("#content").getElementsByTagName("h1");
 			for(let i = 0; i < ht.length; i++) {
 				add_sidebar(ht[i].innerText, `#${ht[i].id}`);
 			}
