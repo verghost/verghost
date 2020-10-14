@@ -78,7 +78,12 @@
 			atag.innerText = text;
 			sidebar_panel.appendChild(atag);
 		}
-		
+		document.addEventListener('click', (e) => {
+			let s = e.srcElement;
+			if(e.id !== "sidebar-icon" && e.id !== "btn-sidebar-icon" && s.id !== "vgsidebar" && sidebar_open) {
+				sidebar_toggle();
+			}
+		});
 		window.addEventListener('load', () => { 
 			let ht = dq("#content").getElementsByTagName("h1");
 			for(let i = 0; i < ht.length; i++) {
