@@ -80,9 +80,9 @@
 		}
 		document.addEventListener('click', (e) => {
 			let s = e.srcElement;
-			if(e.id !== "sidebar-icon" && e.id !== "btn-sidebar-icon" && s.id !== "vgsidebar" && sidebar_open) {
+			if(e.id.indexOf("sidebar") !== -1) {
 				sidebar_toggle();
-			}
+			} else if(sidebar_open) sidebar_toggle();
 		});
 		window.addEventListener('load', () => { 
 			let ht = dq("#content").getElementsByTagName("h1");
