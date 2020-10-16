@@ -33,6 +33,7 @@
 			  height: 100%;
 			  overflow: visible;
 			  z-index: 1000000000;
+			  transition: transform .3s ease-in;
 			}
 			.sidebar a {
 			  display: block;
@@ -55,7 +56,9 @@
 			}
 			#sidebar-panel {
 			  position: relative;
-			  transition: transform .3s ease-in;
+			  box-sizing: border-box;
+			  border-right: 1px solid #dfe2e5;
+			  height: 100%;
 			}
 			.squarei {
 			  padding-right: 20px;
@@ -81,15 +84,15 @@
 		</style>
 	</head>
 	<body>
-		 <header class="page-header" role="banner" style="padding-top: 20px; padding-bottom: 10px;">
+		<header class="page-header" role="banner" style="padding-top: 20px; padding-bottom: 10px;">
 			  <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
 			  <h2 class="project-tagline">{{ page.debug | "" }}</h2>
-		 </header>
-		 <nav id="vgsidebar" class="sidebar">
-		  <div id="sidebar-icon">
-			<button id="btn-sidebar-icon" class="squarei sidebar-close">☰</button>
+		</header>
+		<nav id="vgsidebar" class="sidebar" style="transform: translateX(-100%)">
+			<div id="sidebar-icon">
+				<button id="btn-sidebar-icon" class="squarei sidebar-close">☰</button>
 			</div>
-		  <div id="sidebar-panel" style="transform: translateX(-100%)">
+			<div id="sidebar-panel">
 					<a class="squarei" href="/">Home</a>
 				{% if page.title != "Verghost" %}
 					<a class="squarei" href="../">Back</a>
@@ -101,8 +104,8 @@
 						<a class="squarei" href="{{ e[0] }}">{{ e[1] }}</a>
 					{% endfor %}
 				{% endif %}
-		  </div>
-		 </nav>
+			</div>
+		</nav>
 		 
 		<main id="content" class="main-content" role="main">
 				{{ content }}
@@ -121,11 +124,11 @@
 			
 			function sidebar_toggle() {
 				if(sidebar_open) {
-					document.querySelector("#sidebar-panel").style.transform = 'translateX(-100%)';
+					document.querySelector("#vgsidebar").style.transform = 'translateX(-100%)';
 					document.querySelector("#btn-sidebar-icon").style.transform = 'none';
 					sidebar_open = false;
 				} else {
-					document.querySelector("#sidebar-panel").style.transform = 'none';
+					document.querySelector("#vgsidebar").style.transform = 'none';
 					document.querySelector("#btn-sidebar-icon").style.transform = 'rotateZ(90deg)';
 					sidebar_open = true;
 				}	
