@@ -35,9 +35,13 @@
 				z-index: 1000000000;
 				transition: transform .3s ease-in;
 			}
+			#sidebar-links {
+				overflow-x: visible;
+				overflow-y: scroll;
+			}
 			.sidebar a {
 				display: block;
-				border: 2px solid #606c71;
+				/* border: 2px solid #606c71; */
 				color: #606c71;
 				text-decoration: none;
 			}
@@ -104,6 +108,7 @@
 		<div id="sidebar-panel" class="sidebar" style="transform: translateX(-100%)">
 			<div id="sidebar-header">
 			</div>
+				<div id="sidebar-links">
 				<a class="squarei" href="/">Home</a>
 			{% if page.title != "Verghost" %}
 				<a class="squarei" href="../">Back</a>
@@ -115,6 +120,7 @@
 					<a class="squarei" href="{{ e[0] }}">{{ e[1] }}</a>
 				{% endfor %}
 			{% endif %}
+			</div>
 		</div>
 		 
 		<main id="content" class="main-content" role="main">
