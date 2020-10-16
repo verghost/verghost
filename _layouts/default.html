@@ -31,7 +31,6 @@
 				top: 0 !important;
 				bottom: 0 !important;
 				height: 100%;
-				overflow: visible;
 				z-index: 1000000000;
 				transition: transform .3s ease-in;
 			}
@@ -106,10 +105,10 @@
 		<div id="sidebar-icon">
 			<button id="btn-sidebar-icon" class="squarei sidebar-close">☰</button>
 		</div>
-		<div id="sidebar-panel" class="sidebar" style="transform: translateX(-100%)">
+		<div id="sidebar-panel" style="transform: translateX(-100%)">
 			<div id="sidebar-header">
 			</div>
-				<div id="sidebar-links">
+				<div id="sidebar-links" class="sidebar" >
 				<a class="squarei" href="/">Home</a>
 			{% if page.title != "Verghost" %}
 				<a class="squarei" href="../">Back</a>
