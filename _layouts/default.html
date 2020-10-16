@@ -31,16 +31,14 @@
 				top: 0 !important;
 				bottom: 0 !important;
 				height: 100%;
+				overflow-x: visible;
+				overflow-y: auto;
 				z-index: 1000000000;
 				transition: transform .3s ease-in;
 				box-sizing: border-box;
 				background-color: #fff;
 				border-right: 1px solid #dfe2e5;
 				height: 100%;
-			}
-			#sidebar-links {
-				overflow: auto;
-				display: block;
 			}
 			.sidebar a {
 				word-wrap: break-word;
@@ -66,9 +64,6 @@
 			}
 			#btn-sidebar-icon {
 				background-color: #fff;
-			}
-			#sidebar-panel {
-				
 			}
 			#sidebar-header {
 				margin-top: 2px;
@@ -109,19 +104,17 @@
 		<div id="sidebar-panel" class="sidebar" style="transform: translateX(-100%)">
 			<div id="sidebar-header">
 			</div>
-				<div id="sidebar-links">
-				<a class="squarei" href="/">Home</a>
-			{% if page.title != "Verghost" %}
-				<a class="squarei" href="../">Back</a>
-			{% endif %}
-			{% if page.vgsidebar %}
-				{% assign vgsentries = page.vgsidebar | split: "," %}
-				{% for entry in vgsentries %}
-					{% assign e = entry | split: ":" %}
-					<a class="squarei" href="{{ e[0] }}">{{ e[1] }}</a>
-				{% endfor %}
-			{% endif %}
-			</div>
+			<a class="squarei" href="/">Home</a>
+{% if page.title != "Verghost" %}
+			<a class="squarei" href="../">Back</a>
+{% endif %}
+{% if page.vgsidebar %}
+{% assign vgsentries = page.vgsidebar | split: "," %}
+{% for entry in vgsentries %}
+{% assign e = entry | split: ":" %}
+			<a class="squarei" href="{{ e[0] }}">{{ e[1] }}</a>
+{% endfor %}
+{% endif %}
 		</div>
 		 
 		<main id="content" class="main-content" role="main">
