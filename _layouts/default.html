@@ -21,67 +21,69 @@
 		<style>
 			/* Sidebar */
 			.sidebar {
-			  margin: 0;
-			  padding: 0;
-			  width: 200px;
-			  position: fixed;
-			  box-sizing: border-box;
-			  left: 0 !important;
-			  right: 0 !important;
-			  top: 0 !important;
-			  bottom: 0 !important;
-			  height: 100%;
-			  overflow: visible;
-			  z-index: 1000000000;
-			  transition: transform .3s ease-in;
+				margin: 0;
+				padding: 0;
+				width: 200px;
+				position: fixed;
+				box-sizing: border-box;
+				left: 0 !important;
+				right: 0 !important;
+				top: 0 !important;
+				bottom: 0 !important;
+				height: 100%;
+				overflow: visible;
+				z-index: 1000000000;
+				transition: transform .3s ease-in;
 			}
 			.sidebar a {
-			  display: block;
-			  border: 2px solid #555;
-			  color: black;
-			  text-decoration: none;
+				display: block;
+				border: 2px solid #555;
+				color: white;
+				text-decoration: none;
 			}
 			.sidebar a.active {
-			  background-color: #4CAF50;
-			  color: white;
+				background-color: #4CAF50;
+				color: white;
 			}
 			.sidebar a:hover:not(.active) {
-			  background-color: #555;
-			  color: white;
+				background-color: #555;
+				color: white;
 			}
 			#sidebar-icon {
-			  position: fixed;
-			  top: 0 !important;
-			  z-index: 1000000001;
-			  transition: transform .3s ease-out;
+				position: fixed;
+				top: 0 !important;
+				z-index: 1000000001;
+				border-color: currentcolor;
+				background-color: #181a1b;
+				transition: transform .3s ease-out;
 			}
 			#sidebar-panel {
-			  box-sizing: border-box;
-			  background-color: #181a1b;
-			  border-right: 1px solid #dfe2e5;
-			  padding-top: 65px;
-			  height: 100%;
+				box-sizing: border-box;
+				background-color: #181a1b;
+				border-right: 1px solid #dfe2e5;
+				padding-top: 65px;
+				height: 100%;
 			}
 			.squarei {
-			  padding-right: 20px;
-			  padding-left: 20px;
-			  padding-bottom: 15px;
-			  padding-top: 15px;
-			  text-align: center;
-			  text-decoration: none;
-			  display: inline;
-			  font-size: 14px;
-			  transition: 0.4s;
-			  cursor: pointer;
-			  margin: 5px;
+				padding-right: 20px;
+				padding-left: 20px;
+				padding-bottom: 15px;
+				padding-top: 15px;
+				text-align: center;
+				text-decoration: none;
+				display: inline;
+				font-size: 14px;
+				transition: 0.4s;
+				cursor: pointer;
+				margin: 5px;
 			}
 			.squarei:hover {
-			  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+				box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 			}
 			.squarei:active {
-			  box-shadow: 0 5px light-grey;
-			  transform: translateY(2px);
-			  transition: 0.01s;
+				box-shadow: 0 5px light-grey;
+				transform: translateY(2px);
+				transition: 0.01s;
 			}  
 		</style>
 	</head>
