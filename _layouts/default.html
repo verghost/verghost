@@ -33,6 +33,10 @@
 				height: 100%;
 				z-index: 1000000000;
 				transition: transform .3s ease-in;
+				box-sizing: border-box;
+				background-color: #fff;
+				border-right: 1px solid #dfe2e5;
+				height: 100%;
 			}
 			#sidebar-links {
 				overflow: auto;
@@ -64,10 +68,7 @@
 				background-color: #fff;
 			}
 			#sidebar-panel {
-				box-sizing: border-box;
-				background-color: #fff;
-				border-right: 1px solid #dfe2e5;
-				height: 100%;
+				
 			}
 			#sidebar-header {
 				margin-top: 2px;
@@ -105,10 +106,10 @@
 		<div id="sidebar-icon">
 			<button id="btn-sidebar-icon" class="squarei sidebar-close">☰</button>
 		</div>
-		<div id="sidebar-panel" style="transform: translateX(-100%)">
+		<div id="sidebar-panel" class="sidebar" style="transform: translateX(-100%)">
 			<div id="sidebar-header">
 			</div>
-				<div id="sidebar-links" class="sidebar" >
+				<div id="sidebar-links">
 				<a class="squarei" href="/">Home</a>
 			{% if page.title != "Verghost" %}
 				<a class="squarei" href="../">Back</a>
