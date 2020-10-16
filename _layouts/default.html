@@ -39,6 +39,7 @@
 				background-color: #fff;
 				border-right: 1px solid #dfe2e5;
 				height: 100%;
+				margin-top: 65px;
 			}
 			.sidebar a {
 				word-wrap: break-word;
@@ -66,8 +67,9 @@
 				background-color: #fff;
 			}
 			#sidebar-header {
-				margin-top: 2px;
-				margin-left: 68px;
+				width: 200px;
+				position: fixed;
+				top: 0px !important;
 				height: 65px;
 			}
 			.squarei {
@@ -101,9 +103,9 @@
 		<div id="sidebar-icon">
 			<button id="btn-sidebar-icon" class="squarei sidebar-close">☰</button>
 		</div>
+		<div id="sidebar-header">
+		</div>
 		<div id="sidebar-panel" class="sidebar" style="transform: translateX(-100%)">
-			<div id="sidebar-header">
-			</div>
 			<a class="squarei" href="/">Home</a>
 {% if page.title != "Verghost" %}
 			<a class="squarei" href="../">Back</a>
