@@ -38,7 +38,7 @@
 			.sidebar a {
 				display: block;
 				border: 2px solid #555;
-				color: white;
+				color: #000;
 				text-decoration: none;
 			}
 			.sidebar a.active {
@@ -63,8 +63,11 @@
 				box-sizing: border-box;
 				background-color: #fff;
 				border-right: 1px solid #dfe2e5;
-				padding-top: 65px;
 				height: 100%;
+			}
+			#sidebar-header {
+				
+				height: 65px;
 			}
 			.squarei {
 				padding-right: 20px;
@@ -98,6 +101,8 @@
 			<button id="btn-sidebar-icon" class="squarei sidebar-close">☰</button>
 		</div>
 		<div id="sidebar-panel" class="sidebar" style="transform: translateX(-100%)">
+			<div id="sidebar-header">
+			</div>
 				<a class="squarei" href="/">Home</a>
 			{% if page.title != "Verghost" %}
 				<a class="squarei" href="../">Back</a>
