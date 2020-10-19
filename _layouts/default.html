@@ -170,9 +170,9 @@
 			window.addEventListener('load', () => { 
 				let ht = dqa("#content h1, #content h2");
 				for(let i = 0; i < ht.length; i++) {
-					add_sidebar(ht[i].innerText, `#${ht[i].id}`, "squarei"); //()? "squarei" : "squarei-small");
+					add_sidebar(ht[i].innerText, `#${ht[i].id}`, "squarei"); //(ht[i].tagName === "h1")? "squarei" : "squarei-small");
 				}
-				add_sidebar("About", "/about");
+				add_sidebar("About", "/about", "squarei");
 				sidebar_hasinit = true;
 			});
 		</script>
