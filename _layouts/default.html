@@ -153,10 +153,10 @@
 				}	
 			}
 			
-			function add_sidebar(text, link) {
+			function add_sidebar(text, link, className) {
 				if(!sidebar_panel) sidebar_panel = dq("#sidebar-panel");
 				let atag = document.createElement("a");
-				atag.className = "squarei";
+				atag.className = className;
 				atag.href = link;
 				atag.innerText = text;
 				sidebar_panel.appendChild(atag);
@@ -168,9 +168,9 @@
 				} else if(sidebar_open) sidebar_toggle();
 			});
 			window.addEventListener('load', () => { 
-				let ht = dq("#content").getElementsByTagName("h1");
+				let ht = dqa("#content h1, #content h2");
 				for(let i = 0; i < ht.length; i++) {
-					add_sidebar(ht[i].innerText, `#${ht[i].id}`);
+					add_sidebar(ht[i].innerText, `#${ht[i].id}`, "squarei"); //()? "squarei" : "squarei-small");
 				}
 				add_sidebar("About", "/about");
 				sidebar_hasinit = true;
