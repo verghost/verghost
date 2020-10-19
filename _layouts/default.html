@@ -21,27 +21,28 @@
 		<script src="/js/vglib.js"></script>
 		<style>
 			/* Sidebar */
-			.sidebar {
-				margin: 65px 0px 0px 0px;
-				padding: 0;
+			.vgsidebar {
 				width: 250px;
+				background-color: #fff;
+				border-right: 1px solid #dfe2e5;
+			}
+			.panel {
+				margin: 0;
+				padding: 0;
+				height: auto;
 				position: fixed;
 				box-sizing: border-box;
 				left: 0 !important;
 				right: 0 !important;
-				top: 0 !important;
+				top: 65px !important;
 				bottom: 0 !important;
-				height: 100%;
 				overflow-x: visible;
 				overflow-y: auto;
-				z-index: 1000000000;
+				z-index: 1000000001;
 				transition: transform .3s ease-in;
 				box-sizing: border-box;
-				background-color: #fff;
-				border-right: 1px solid #dfe2e5;
-				height: 100%;
 			}
-			.sidebar a {
+			.panel a {
 				word-wrap: break-word;
 				display: block;
 				/* border: 2px solid #606c71; */
@@ -49,11 +50,11 @@
 				text-decoration: none;
 				text-align: left;
 			}
-			.sidebar a.active {
+			.panel a.active {
 				background-color: #4CAF50;
 				color: white;
 			}
-			.sidebar a:hover:not(.active) {
+			.panel a:hover:not(.active) {
 				background-color: #555;
 				color: white;
 			}
@@ -68,12 +69,15 @@
 				background-color: #fff;
 			}
 			#sidebar-header {
-				width: 250px;
+				height: 65px;
 				position: fixed;
 				top: 0px !important;
+				transition: transform .3s ease-in;
+			}
+			#sidebar-footer {
 				height: 65px;
-				background-color: #fff;
-				border-right: 1px solid #dfe2e5;
+				position: fixed;
+				bottom: 0 !important;
 				transition: transform .3s ease-in;
 			}
 			.squarei {
@@ -110,13 +114,16 @@
 			  <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
 			  <h2 class="project-tagline">{{ page.debug | "" }}</h2>
 		</header>
+		
 		<div id="sidebar-icon">
 			<button id="btn-sidebar-icon" class="squarei sidebar-close">☰</button>
 		</div>
-		<div id="sidebar-header" style="transform: translateX(-100%)">
+		
+		<div id="sidebar-header" class="vgsidebar" style="transform: translateX(-100%)">
 			<p style="margin-left: 68px; margin-top: 2px;"><!-- {{ page.title | default: "" }} --></p>
 		</div>
-		<div id="sidebar-panel" class="sidebar" style="transform: translateX(-100%)">
+		
+		<div id="sidebar-panel" class="vgsidebar panel" style="transform: translateX(-100%)">
 			<a class="squarei" href="/">Home</a>
 {% if page.title != "Verghost" %}
 			<a class="squarei" href="../">Back</a>
@@ -129,7 +136,9 @@
 {% endfor %}
 {% endif %}
 		</div>
-		 
+		
+		<div id="sidebar-footer" class="vgsidebar"></div>
+		
 		<main id="content" class="main-content" role="main">
 				{{ content }}
 
@@ -149,11 +158,13 @@
 				if(sidebar_open) {
 					document.querySelector("#sidebar-panel").style.transform = 'translateX(-100%)';
 					document.querySelector("#sidebar-header").style.transform = 'translateX(-100%)';
+					document.querySelector("#sidebar-footer").style.transform = 'translateX(-100%)';
 					document.querySelector("#btn-sidebar-icon").style.transform = 'none';
 					sidebar_open = false;
 				} else {
 					document.querySelector("#sidebar-panel").style.transform = 'none';
 					document.querySelector("#sidebar-header").style.transform = 'none';
+					document.querySelector("#sidebar-footer").style.transform = 'none';
 					document.querySelector("#btn-sidebar-icon").style.transform = 'rotateZ(90deg)';
 					sidebar_open = true;
 				}	
