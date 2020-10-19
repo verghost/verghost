@@ -126,10 +126,10 @@
 		</div>
 		
 		<div id="sidebar-panel" class="vgsidebar panel" style="transform: translateX(-100%)">
-			<a class="squarei" href="/">Home</a>
+			<!-- <a class="squarei" href="/">Home</a>
 {% if page.title != "Verghost" %}
 			<a class="squarei" href="../">Back</a>
-{% endif %}
+{% endif %} -->
 {% if page.vgsidebar %}
 {% assign vgsentries = page.vgsidebar | split: "," %}
 {% for entry in vgsentries %}
@@ -193,7 +193,7 @@
 				for(let i = 0; i < ht.length; i++) {
 					add_sidebar(ht[i].innerText, `#${ht[i].id}`, (ht[i].tagName === "H1")? "squarei" : "squarei small");
 				}
-				add_sidebar("About", "/about", "squarei");
+				//add_sidebar("About", "/about", "squarei");
 				sidebar_hasinit = true;
 			});
 		</script>
