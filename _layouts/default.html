@@ -24,7 +24,7 @@
 			.sidebar {
 				margin: 0;
 				padding: 0;
-				width: 200px;
+				width: 250px;
 				position: fixed;
 				box-sizing: border-box;
 				left: 0 !important;
@@ -68,7 +68,7 @@
 				background-color: #fff;
 			}
 			#sidebar-header {
-				width: 200px;
+				width: 250px;
 				position: fixed;
 				top: 0px !important;
 				height: 65px;
@@ -96,6 +96,11 @@
 				box-shadow: 0 5px light-grey;
 				transform: translateY(2px);
 				transition: 0.01s;
+			}
+			.squarei.small {
+				font-size: 12px;
+				padding-top: 0px;
+				margin-top: 0px;
 			}
 		</style>
 	</head>
@@ -161,16 +166,18 @@
 				atag.innerText = text;
 				sidebar_panel.appendChild(atag);
 			}
+			
 			document.addEventListener('click', (e) => {
 				let s = e.srcElement;
 				if(s.id.indexOf("sidebar") !== -1) {
 					sidebar_toggle();
 				} else if(sidebar_open) sidebar_toggle();
 			});
+			
 			window.addEventListener('load', () => { 
 				let ht = dqa("#content h1, #content h2");
 				for(let i = 0; i < ht.length; i++) {
-					add_sidebar(ht[i].innerText, `#${ht[i].id}`, "squarei"); //(ht[i].tagName === "h1")? "squarei" : "squarei-small");
+					add_sidebar(ht[i].innerText, `#${ht[i].id}`, (ht[i].tagName === "H1")? "squarei" : "squarei small");
 				}
 				add_sidebar("About", "/about", "squarei");
 				sidebar_hasinit = true;
