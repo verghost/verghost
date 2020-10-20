@@ -126,8 +126,8 @@
 		</div>
 		
 		<div id="sidebar-panel" class="vgsidebar panel" style="transform: translateX(-100%)">
-			<!-- <a class="squarei" href="/">Home</a>
-{% if page.title != "Verghost" %}
+			<a class="squarei" href="#content">{{ page.title | default: "" }}</a>
+<!-- {% if page.title != "Verghost" %}
 			<a class="squarei" href="../">Back</a>
 {% endif %} -->
 {% if page.vgsidebar %}
