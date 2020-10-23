@@ -1,5 +1,7 @@
-# Module List
-----
+---
+title: Module List
+project: vlc-lua-docs
+---
 ### [Configuration](https://verghost.com/vlc-lua-docs/m/config)
 ### [Dialog](https://verghost.com/vlc-lua-docs/m/dialog)
 ### [Equalizer](https://verghost.com/vlc-lua-docs/m/equalizer)
