@@ -11,7 +11,7 @@
 		<style>
 			/* Sidebar */
 			.vgsidebar {
-				width: 250px;
+				width: 280px;
 				background-color: #fff;
 				border-right: 1px solid #dfe2e5;
 			}
@@ -47,7 +47,7 @@
 				background-color: #555;
 				color: white;
 			}
-			#sidebar-icon {
+			#sidebar-toggle {
 				position: fixed;
 				top: 0 !important;
 				border-color: currentcolor;
@@ -106,9 +106,7 @@
 			  <h2 class="project-tagline">{{ page.debug | "" }}</h2>
 		</header>
 		
-		<div id="sidebar-icon">
-			<button id="btn-sidebar-close" class="squarei header-icon">☰</button>
-		</div>
+		<button id="sidebar-toggle" class="squarei header-icon">☰</button>
 		
 		<div id="sidebar-header" class="vgsidebar" style="transform: translateX(-100%)">
 			<button class="squarei header-icon" style="margin-left: 65px;">☰</button>
@@ -170,13 +168,13 @@
 					document.querySelector("#sidebar-panel").style.transform = 'translateX(-100%)';
 					document.querySelector("#sidebar-header").style.transform = 'translateX(-100%)';
 					document.querySelector("#sidebar-footer").style.transform = 'translateX(-100%)';
-					document.querySelector("#btn-sidebar-close").style.transform = 'none';
+					document.querySelector("#sidebar-toggle").style.transform = 'none';
 					sidebar_open = false;
 				} else {
 					document.querySelector("#sidebar-panel").style.transform = 'none';
 					document.querySelector("#sidebar-header").style.transform = 'none';
 					document.querySelector("#sidebar-footer").style.transform = 'none';
-					document.querySelector("#btn-sidebar-close").style.transform = 'rotateZ(90deg)';
+					document.querySelector("#sidebar-toggle").style.transform = 'rotateZ(90deg)';
 					sidebar_open = true;
 				}
 			}
