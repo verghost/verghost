@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="{{ site.lang | default: 'en-US' }}">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +9,6 @@
 		<title>{{ page.title | default: site.title | default: site.github.repository_name }}</title>
 		<link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 		<style>
-			/* Sidebar */
 			.vgsidebar {
 				width: 280px;
 				background-color: #fff;
@@ -34,7 +33,6 @@
 			.panel a {
 				word-wrap: break-word;
 				display: block;
-				/* border: 2px solid #606c71; */
 				color: #606c71;
 				text-decoration: none;
 				text-align: left;
@@ -50,16 +48,27 @@
 			#sidebar-toggle {
 				position: fixed;
 				top: 0 !important;
-				border-color: currentcolor;
 				margin-right: 0px !important;
 				transition: transform .3s ease-out;
 			}
 			.header-icon {
 				z-index: 1000000001;
 				background-color: #fff;
+				border-color: gray;
 				width: 55px;
 				height: 55px;
 				display: inline-flex;
+			}
+			.panel-icon {
+				padding: 0;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.panel-icon svg {
+				width: 20px;
+				height: 20px;
+				fill:#000;
 			}
 			#sidebar-header {
 				display: flex;
@@ -70,12 +79,6 @@
 				z-index: 1000000000;
 				top: 0px !important;
 				transition: transform .3s ease-in;
-			}
-			#home-icon {
-				padding: 0;
-				display: inline-flex;
-				align-items: center;
-				justify-content: center;
 			}
 			#sidebar-footer {
 				height: 45px;
@@ -123,34 +126,23 @@
 		<button id="sidebar-toggle" class="squarei header-icon">☰</button>
 		
 		<div id="sidebar-header" class="vgsidebar" style="transform: translateX(-100%)">
-			<button id="home-icon" class="squarei header-icon"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 55 55" style="width: 20px; height: 20px; fill:#000;"><path d="M 24.962891 1.0546875 A 1.0001 1.0001 0 0 0 24.384766 1.2636719 L 1.3847656 19.210938 A 1.0005659 1.0005659 0 0 0 2.6152344 20.789062 L 4 19.708984 L 4 46 A 1.0001 1.0001 0 0 0 5 47 L 18.832031 47 A 1.0001 1.0001 0 0 0 19.158203 47 L 30.832031 47 A 1.0001 1.0001 0 0 0 31.158203 47 L 45 47 A 1.0001 1.0001 0 0 0 46 46 L 46 19.708984 L 47.384766 20.789062 A 1.0005657 1.0005657 0 1 0 48.615234 19.210938 L 41 13.269531 L 41 6 L 35 6 L 35 8.5859375 L 25.615234 1.2636719 A 1.0001 1.0001 0 0 0 24.962891 1.0546875 z M 25 3.3222656 L 44 18.148438 L 44 45 L 32 45 L 32 26 L 18 26 L 18 45 L 6 45 L 6 18.148438 L 25 3.3222656 z M 37 8 L 39 8 L 39 11.708984 L 37 10.146484 L 37 8 z M 20 28 L 30 28 L 30 45 L 20 45 L 20 28 z"></path></svg></button>
-			<button class="squarei header-icon">☰</button>
-			<button class="squarei header-icon">☰</button>
+			<button id="home-icon" class="squarei header-icon panel-icon" onclick=""><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 55 55"><path d="M 24.962891 1.0546875 A 1.0001 1.0001 0 0 0 24.384766 1.2636719 L 1.3847656 19.210938 A 1.0005659 1.0005659 0 0 0 2.6152344 20.789062 L 4 19.708984 L 4 46 A 1.0001 1.0001 0 0 0 5 47 L 18.832031 47 A 1.0001 1.0001 0 0 0 19.158203 47 L 30.832031 47 A 1.0001 1.0001 0 0 0 31.158203 47 L 45 47 A 1.0001 1.0001 0 0 0 46 46 L 46 19.708984 L 47.384766 20.789062 A 1.0005657 1.0005657 0 1 0 48.615234 19.210938 L 41 13.269531 L 41 6 L 35 6 L 35 8.5859375 L 25.615234 1.2636719 A 1.0001 1.0001 0 0 0 24.962891 1.0546875 z M 25 3.3222656 L 44 18.148438 L 44 45 L 32 45 L 32 26 L 18 26 L 18 45 L 6 45 L 6 18.148438 L 25 3.3222656 z M 37 8 L 39 8 L 39 11.708984 L 37 10.146484 L 37 8 z M 20 28 L 30 28 L 30 45 L 20 45 L 20 28 z"></path></svg></button>
+			<button id="search-icon" class="squarei header-icon panel-icon" onclick=""><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 55 55"><path d="M 19 3 C 13.488281 3 9 7.488281 9 13 C 9 15.394531 9.839844 17.589844 11.25 19.3125 L 3.28125 27.28125 L 4.71875 28.71875 L 12.6875 20.75 C 14.410156 22.160156 16.605469 23 19 23 C 24.511719 23 29 18.511719 29 13 C 29 7.488281 24.511719 3 19 3 Z M 19 5 C 23.429688 5 27 8.570313 27 13 C 27 17.429688 23.429688 21 19 21 C 14.570313 21 11 17.429688 11 13 C 11 8.570313 14.570313 5 19 5 Z"></path></svg></button>
 		</div>
 		
 		<div id="sidebar-panel" class="vgsidebar panel" style="transform: translateX(-100%)">
 			<a class="squarei" href="#content">{{ page.title | default: "" }}</a>
-<!-- {% if page.title != "Verghost" %}
-			<a class="squarei" href="../">Back</a>
-{% endif %} -->
-{% if page.vgsidebar %}
-{% assign vgsentries = page.vgsidebar | split: "," %}
-{% for entry in vgsentries %}
-{% assign e = entry | split: ":" %}
-			<a class="squarei" href="{{ e[0] }}">{{ e[1] }}</a>
-{% endfor %}
-{% endif %}
 		</div>
 		
 		<div id="sidebar-footer" class="vgsidebar" style="transform: translateX(-100%)"></div>
 		
 		<main id="content" class="main-content" role="main">
-				{{ content }}
+			{{ content }}
 
 			<footer class="site-footer">
-			{% if site.github.is_project_page %}
+{% if site.github.is_project_page %}
 			  <span class="site-footer-owner">Maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
-			{% endif %}
+{% endif %}
 				<span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
 			</footer>
 		</main>
@@ -158,7 +150,7 @@
 		<!-- Scripts -->
 		<script src="/js/vglib.js"></script>
 {% case page.project %}
-	{% when "vlc-lua-docs" %}
+{% when "vlc-lua-docs" %}
 		<!-- VLC-Lua-Docs -->
 		<script>
 			var vghhelper = {
@@ -167,7 +159,7 @@
 				"t": { text: "Script Types" }
 			};
 		</script>
-	{% else %}
+{% else %}
 		<!-- NO_TYPE -->
 		<script> var vghhelper = {}; </script>
 {% endcase %}
@@ -215,10 +207,11 @@
 			window.addEventListener('load', () => { 
 				// sidebar
 				let ht = dqa("#content h1, #content h2");
+				if(ht.length === 0) return;
+				if(ht.length > 1 && ht[1].tagName === 'H1')  ht.shift(); // remove content link
 				for(let i = 0; i < ht.length; i++) {
 					add_sidebar(ht[i].innerText, `#${ht[i].id}`, (ht[i].tagName === "H1")? "squarei" : "squarei small");
 				}
-				//add_sidebar("About", "/about", "squarei");
 				sidebar_hasinit = true;
 				
 				// second heading
