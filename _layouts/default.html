@@ -200,7 +200,7 @@
 			
 			document.addEventListener('click', (e) => {
 				let s = e.srcElement;
-				if(!sidebar_open && s.id.indexOf("sidebar") !== -1) { sidebar_toggle();	}
+				if(sidebar_open && s.id.indexOf("sidebar") === -1) { sidebar_toggle();	}
 			});
 			
 			window.addEventListener('load', () => { 
