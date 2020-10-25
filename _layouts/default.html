@@ -221,7 +221,7 @@
 				let tagline = dq(".project-tagline");
 				
 				let pdirs = window.location.pathname.replace(/\/$/, '').split("/").slice(0, -1);
-				if(pdirs.length < 2) return;
+				if(pdirs.length === 0) return;
 				
 				let last = { text: "{{ page.title | default: "" }}", link: window.location.href };
 				if(last.text === "") return;
