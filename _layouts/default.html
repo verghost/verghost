@@ -210,10 +210,11 @@
 			window.addEventListener('load', () => {
 				/* sidebar */
 				let ht = dqa("#content h1, #content h2");
-				if(ht.length === 0) return;
-				if(ht[0].tagName === 'H1') dq("#default-top-link").remove(); // remove default top content link
-				for(let i = 0; i < ht.length; i++) {
-					add_sidebar(ht[i].innerText, `#${ht[i].id}`, (ht[i].tagName === "H1")? "squarei" : "squarei small");
+				if(ht.length > 0) {
+					if(ht[0].tagName === 'H1') dq("#default-top-link").remove(); // remove default top content link
+					for(let i = 0; i < ht.length; i++) {
+						add_sidebar(ht[i].innerText, `#${ht[i].id}`, (ht[i].tagName === "H1")? "squarei" : "squarei small");
+					}
 				}
 				sidebar_hasinit = true;
 				
@@ -221,28 +222,26 @@
 				let tagline = dq(".project-tagline");
 				
 				let pdirs = window.location.pathname.replace(/(^\/)|(\/$)/g, '').split("/").slice(0, -1);
-				console.log(pdirs.length);
-				if(pdirs.length === 0) return;
-				
 				let last = { text: "{{ page.title | default: "" }}", link: window.location.href };
-				if(last.text === "") return;
-				
-				let lval = window.location.origin;
-				pdirs.forEach(e => {
-					if(!vghhelper[e]) return;
-					lval += "/" + e;
-					addAtag(tagline, lval, vghhelper[e].text || e);
-					tagline.insertAdjacentText('beforeend', " / ");
-				});
-				addAtag(tagline, window.location.href, last.text);
+				if(pdirs.length > 0 && last.text !== "") {
+					let lval = window.location.origin;
+					pdirs.forEach(e => {
+						if(!vghhelper[e]) return;
+						lval += "/" + e;
+						addAtag(tagline, lval, vghhelper[e].text || e);
+						tagline.insertAdjacentText('beforeend', " / ");
+					});
+					addAtag(tagline, window.location.href, last.text);
+				}
 				
 				/* style bodge */
 				let p_class = dqa(".language-lua code > span.p");
-				if(!p_class) return;
-				for(let i = 0; i < p_class.length; i++) {
-					let el = p_class[i];
-					if(el.innerText === "(" && el.previousElementSibling && el.previousElementSibling.className === "n") {
-						el.previousElementSibling.className = "pl-c1";
+				if(p_class) {
+					for(let i = 0; i < p_class.length; i++) {
+						let el = p_class[i];
+						if(el.innerText === "(" && el.previousElementSibling && el.previousElementSibling.className === "n") {
+							el.previousElementSibling.className = "pl-c1";
+						}
 					}
 				}
 			});
