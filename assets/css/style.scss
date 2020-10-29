@@ -15,10 +15,13 @@ code.language-plaintext { color: #24292e; }
   font-weight: 600;
 }
 
+/* Other style bodges */
 .main-content {
 	max-width: 90rem;
 }
-
 .project-tagline a {
 	color: #7cd8f4;
+}
+.main-content hr {
+	margin: 2rem 0 1rem 0;
 }
