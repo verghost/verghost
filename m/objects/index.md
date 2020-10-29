@@ -6,7 +6,8 @@ Useful VLC objects.
 
 
 ## `player()`
-Gets the player item object; equivelant to [vlc.player.item()](/vlc-lua-docs/m/player/#item).
+Get the [player](../player/) object. Not to be confused with the [player item object](../player/#item).
+NOTE: Pre 4.0.0, this was `vlc.object.input()`
 
 ### Return value
 A player item object if input exists, otherwise `nil`
@@ -16,7 +17,7 @@ A player item object if input exists, otherwise `nil`
 Get the playlist object.
 
 ### Return value
-Playlist object
+Playlist object or `nil`
 
 ----
 ## `libvlc()`
@@ -38,4 +39,16 @@ Get the vout object.
 
 ### Return value
 The vout object or `nil`  
-VOut has variables "aspect-ratio", "autoscale", "crop", "crop-bottom", "crop-top", "crop-left", "crop-right", "deinterlace", "deinterlace-mode", "sub-margin", "secondary-sub-margin", "zoom"
+VOut has the following [variables](/vlc-lua-docs/m/var):
+- `aspect-ratio`
+- `autoscale`
+- `crop`
+- `crop-bottom`
+- `crop-top`
+- `crop-left`
+- `crop-right`
+- `deinterlace`
+- `deinterlace-mode`
+- `sub-margin`
+- `secondary-sub-margin`
+- `zoom`
