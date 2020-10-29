@@ -236,7 +236,6 @@
 				
 				/* second heading */
 				let tagline = dq(".project-tagline");
-				
 				let pdirs = window.location.pathname.replace(/(^\/)|(\/$)/g, '').split("/").slice(0, -1);
 				let last = { text: "{{ page.title | default: "" }}", link: window.location.href };
 				if(pdirs.length > 0 && last.text !== "") {
