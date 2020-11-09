@@ -5,6 +5,12 @@ project: vlc-lua-docs
 Access and modify configuration options.  
 Option names can be found in the `vlcrc` file in the folder given by `vlc.config.configdir()` (usually %appdata%\vlc\ on windows).
 
+# Availability
+
+| Script Types |
+| ------------ |
+| [Extension](../../t/extensions), [Interface](../../t/intf) |
+
 ----
 ## `get()`
 Get the value of a VLC configuration option.
@@ -29,7 +35,7 @@ vlc.config.set(name, value)
 ```
 
 ### Parameters
-- `name` Name of the vlc config option
+- `name` Name of the vlc config option (set fails if name is invalid)
 - `value` Value to assign to the config option
 
 ----
