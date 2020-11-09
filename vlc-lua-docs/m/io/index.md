@@ -5,7 +5,13 @@ project: vlc-lua-docs
 Input/Output to/from local file system.  
 Error codes returned from methods in this module will correspond to the [ErrNo](../errno) module.
 
+# Availability
 
+| Script Types |
+| ------------ |
+| [Extension](../../t/extensions), [Interface](../../t/intf) |
+
+----
 ## `open()`
 Open a file; similar to Lua's [io.open](https://www.lua.org/manual/5.1/manual.html#pdf-io.open) method.
 
@@ -17,10 +23,10 @@ local f = open("hello.txt", 'rt') -- only read text
 ### Parameters
 - `path` String containing the path to a file
 - Optional
-	- `mode` String specifying which [mode](#filemodes) in which to open the file; defaults to 'r'
+	- `mode` String specifying which [mode](#file-modes) in which to open the file; defaults to 'r'
 
 ### Return value
-A [File Object](#fileobject)
+A [File Object](#file-object)
 
 ----
 ## `mkdir()`
