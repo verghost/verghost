@@ -5,7 +5,7 @@ title: Verghost
 
 ### Current Projects
 * [Plobf](https://github.com/verghost/plobf) - Bash script obfuscator
-* [VLC Lua Docs](https://vlc.verg.ca) - Documentation for the VLC Lua API [(Source)](https://verghost.com/vlc-lua-docs)
+* [VLC Lua Docs](https://vlc.verg.ca) - Documentation for the VLC Lua API
 * [SimpleR](https://github.com/verghost/SimpleR) - Browser extension for learning languages
 * [SourTools](https://github.com/verghost/SourTools) - Automation for a bunch of random stuff
 
