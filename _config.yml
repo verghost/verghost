@@ -20,7 +20,7 @@
 
 title: Verghost
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://verghost.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://verg.ca" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  verghost
 
 theme: jekyll-theme-cayman
